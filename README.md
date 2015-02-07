@@ -94,9 +94,23 @@ Jenkins can be visited at localhost:8181. In order to do the github hook you hav
 	Manage Jenkins ->Manage Plugins -> Choose the github plugins
 ## Configure in Github Repo
 In order to enable jenkins features, you have to go to the repo settings.
+
 	Settings->Webhooks & Services -> Add Service -> Select Jenkins(Github plugin) -> Jenkins hook url :http://<your host>:port/github-webhook/
-in my case it is 
+
+In my case it is 
 	http://152.14.93.228:8181/github-webhook
 ## Set up Slave Build Server
 follow the rule mentioned in the first part and configure the Vagrantfile to disable the public network access
+
+### Set the SSH connection between Slave and Master
+
+1. create a pair of key on the master machine. Copy the public key to the slave machine
+
+2. config the credentials on the slave machine to be the private key
+
+3. check the ssh is successful between master and slave
+
+## Set up Slave Node in Jenkins
+
+Go to Manage Jenkins -> select Manage Nodes -> New Node (select Dumb Node) -> go to slave configure and set up the right credentials for master to set up ssh connections.
 
