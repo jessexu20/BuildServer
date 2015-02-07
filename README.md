@@ -108,6 +108,7 @@ In my case it is
 3. Add build step 'Execute Shell'
 
 	sudo chmod +x /home/vagrant/build.sh
+	
 	sudo docker run -v /home/vagrant/:/vol ncsu/buildserver sh -c /vol/build.sh
 	
 You need to add jenkins into sudo config
