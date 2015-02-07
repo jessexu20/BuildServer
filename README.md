@@ -99,6 +99,21 @@ In order to enable jenkins features, you have to go to the repo settings.
 
 In my case it is 
 	http://152.14.93.228:8181/github-webhook
+##Set up Master Build Server
+ 
+1. Set up a new project by click New Item and choose git project. 
+
+2. Select build triggers "Build when a change is pushed to GitHub" 
+
+3. Add build step 'Execute Shell'
+
+	sudo chmod +x /home/vagrant/build.sh
+	sudo docker run -v /home/vagrant/:/vol ncsu/buildserver sh -c /vol/build.sh
+	
+You need to add jenkins into sudo config
+
+	%jenkins ALL=NOPASSWD: ALL
+	
 ## Set up Slave Build Server
 follow the rule mentioned in the first part and configure the Vagrantfile to disable the public network access and the forwared port features.
 
