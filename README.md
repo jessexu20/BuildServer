@@ -117,6 +117,9 @@ Go to Manage Jenkins -> select Manage Nodes -> New Node (select Dumb Node) -> go
 You will see  <img src="img/machineStatus.png"/>
 
 ##Test
+
+NOTICE: Dependancy is based on Maven, which will automatically clean and find all the dependancies during each build.
+
 If you push a commit to the master repo, the build server will automatically build the code. 
 
 You will see :
