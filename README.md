@@ -100,7 +100,7 @@ In order to enable jenkins features, you have to go to the repo settings.
 In my case it is 
 	http://152.14.93.228:8181/github-webhook
 ## Set up Slave Build Server
-follow the rule mentioned in the first part and configure the Vagrantfile to disable the public network access
+follow the rule mentioned in the first part and configure the Vagrantfile to disable the public network access and the forwared port features.
 
 ### Set the SSH connection between Slave and Master
 
@@ -114,3 +114,19 @@ follow the rule mentioned in the first part and configure the Vagrantfile to dis
 
 Go to Manage Jenkins -> select Manage Nodes -> New Node (select Dumb Node) -> go to slave configure and set up the right credentials for master to set up ssh connections.
 
+You will see  <img src="img/machineStatus.png"/>
+
+##Test
+If you push a commit to the master repo, the build server will automatically build the code. 
+
+You will see :
+
+1. Build is trigger by Github Push <img src="img/buildTrigger.png"/>
+
+2. Build is start <img src="img/buildStart.png"/>
+
+3. Build is Running on Slave <img src="img/buildRunning.png"/>
+
+In the Jenkins console Output, you will see <img src="img/buildStatus.png"/>
+
+After the build, you will see <img src="img/buildStatus1.png"/>
